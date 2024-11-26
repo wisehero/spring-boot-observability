@@ -1,1 +1,16 @@
-spring.application.name=spring-boot-observability
+spring:
+  application:
+    name: spring-boot-observability
+
+
+management:
+  server:
+    port: 8081
+  endpoints:
+    jmx:
+      exposure:
+        exclude: "*"
+    web:
+      exposure:
+        include: "health, info, prometheus"
+      base-path: /my/actuator
