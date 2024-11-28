@@ -1,6 +1,8 @@
 spring:
   application:
     name: spring-boot-observability
+  profiles:
+    default: local
 
 
 management:
@@ -14,3 +16,21 @@ management:
       exposure:
         include: "health, info, prometheus"
       base-path: /my/actuator
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
