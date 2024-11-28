@@ -11,15 +11,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import wisehero.springbootobservability.hello.request.ExampleModelAttribute;
 import wisehero.springbootobservability.hello.request.ExampleRequestBody;
 
 @RestController
 @RequestMapping("/example")
 @RequiredArgsConstructor
+@Slf4j
 public class ExampleController {
 
 	private final ExampleService exampleService;
+
+	@GetMapping
+	public void example() {
+		log.info("==================EXAMPLE==================");
+	}
 
 	@GetMapping("/request-param")
 	public void requestParam(@RequestParam("name") String name, @RequestParam("description") String description) {

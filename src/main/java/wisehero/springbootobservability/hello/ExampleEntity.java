@@ -19,12 +19,12 @@ public class ExampleEntity {
 
 	private String name;
 
-	private String age;
+	private Integer age;
 
 	private String description;
 
 	@Builder
-	private ExampleEntity(String name, String age, String description) {
+	private ExampleEntity(String name, Integer age, String description) {
 		this.name = name;
 		this.age = age;
 		this.description = description;
