@@ -16,7 +16,7 @@ import wisehero.springbootobservability.hello.request.ExampleModelAttribute;
 import wisehero.springbootobservability.hello.request.ExampleRequestBody;
 
 @RestController
-@RequestMapping("/example")
+@RequestMapping("/api/example")
 @RequiredArgsConstructor
 @Slf4j
 public class ExampleController {
@@ -54,7 +54,6 @@ public class ExampleController {
 	public void pathVariableWithModelAttribute(@PathVariable Long id,
 		@ModelAttribute ExampleModelAttribute exampleModelAttribute) {
 		exampleService.pathVariableWithModelAttributeInService(id, exampleModelAttribute);
-
 	}
 
 	@PostMapping("/request-body")
