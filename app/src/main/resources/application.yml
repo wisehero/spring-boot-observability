@@ -2,20 +2,11 @@ spring:
   application:
     name: spring-boot-observability
   profiles:
-    default: local
-
-
-management:
-  server:
-    port: 8081
-  endpoints:
-    jmx:
-      exposure:
-        exclude: "*"
-    web:
-      exposure:
-        include: "health, info, prometheus"
-      base-path: /my/actuator
+    active: local
+  config:
+    import:
+      - application-monitoring.yml
+      - application-logging.yml
 
 ---
 
