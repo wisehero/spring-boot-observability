@@ -2,5 +2,6 @@ bootJar.enabled = false
 jar.enabled = true
 
 dependencies {
-    
+    implementation 'io.micrometer:micrometer-tracing-bridge-otel'
+    implementation 'io.opentelemetry:opentelemetry-exporter-otlp'
 }
