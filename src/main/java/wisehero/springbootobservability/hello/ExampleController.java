@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import wisehero.springbootobservability.hello.request.ExampleModelAttribute;
@@ -34,15 +35,19 @@ public class ExampleController {
 	}
 
 	@GetMapping("/model-attribute")
-	public void modelAttribute(@ModelAttribute ExampleModelAttribute exampleModelAttribute) {
+	public void modelAttribute(@Valid @ModelAttribute ExampleModelAttribute exampleModelAttribute) {
 		exampleService.modelAttributeInService(exampleModelAttribute);
 
+	}
+
+	@GetMapping("/without-model-attribute")
+	public void withoutModelAttribute(@Valid ExampleModelAttribute exampleModelAttribute) {
+		exampleService.modelAttributeInService(exampleModelAttribute);
 	}
 
 	@GetMapping("/path-variable/{id}")
 	public void pathVariable(@PathVariable("id") Long id) {
 		exampleService.pathVariableInService(id);
-
 	}
 
 	@GetMapping("/path-variable/{id}/with-request-param")
@@ -57,7 +62,7 @@ public class ExampleController {
 	}
 
 	@PostMapping("/request-body")
-	public void requestBody(@RequestBody ExampleRequestBody exampleRequestBody) {
+	public void requestBody(@Valid @RequestBody ExampleRequestBody exampleRequestBody) {
 		exampleService.requestBodyInService(exampleRequestBody);
 	}
 
