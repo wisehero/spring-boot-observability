@@ -25,3 +25,7 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true # 운영에서는 이를 false로 바꿔주도록 함.
