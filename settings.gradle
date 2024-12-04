@@ -1,1 +1,5 @@
 rootProject.name = 'spring-boot-observability'
+
+include('app')
+include('support:monitoring')
+include('support:logging')
