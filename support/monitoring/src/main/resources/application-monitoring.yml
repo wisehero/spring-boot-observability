@@ -5,6 +5,12 @@ management:
     enabled: true
     sampling:
       probability: 1.0
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+    tags:
+        application: ${spring.application.name}
   endpoint:
     health:
       show-details: always

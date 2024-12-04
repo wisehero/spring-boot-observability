@@ -1,6 +1,6 @@
 spring:
   application:
-    name: spring-boot-observability
+    name: spring-boot-app
   profiles:
     active: local
   config:
