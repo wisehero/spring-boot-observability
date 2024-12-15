@@ -13,8 +13,12 @@
 - Prometheus
 - Grafana
 - Docker, Docker Compose
-- NHN Cloud
 
 스프링 부트 액츄에이터에서 제공하는 Prometheus로 메트릭을 수집하고 Grafana로 기본적인 대시보드를 구성합니다.
 
+---
 
+
+### 구조도
+
+![v1-structure](./images/v1/v1-structure.png)
