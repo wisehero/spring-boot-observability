@@ -27,7 +27,7 @@
 - 소스 코드를 다운 받으신 후에 프로젝트 루트 디렉토리에서 아래의 명령어를 실행합니다.
 
 ```shell
-docker-compose up
+docker-compose up -d
 ```
 
 - 이후 docker-compose.yml 파일에 정의된 서비스들이 실행됩니다.
